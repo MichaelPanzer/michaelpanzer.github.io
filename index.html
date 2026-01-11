@@ -16,13 +16,49 @@
     ></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Michael Panzer</title>
+    <style>
+      /* Additional styles for clickable projects */
+      .project-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background: var(--clr-bg-alt);
+        height: 100%;
+      }
+      
+      .project-link:hover {
+        transform: translateY(-5px);
+        border-color: var(--clr-primary);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .project-link:focus {
+        outline: 2px solid var(--clr-primary);
+        outline-offset: 2px;
+      }
+      
+      .project__content {
+        padding: 1.5rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .project__cta {
+        margin-top: auto;
+        padding-top: 1rem;
+        text-align: center;
+      }
+    </style>
   </head>
   <body class="dark" id="top">
     <header class="header center">
       <h3>
-        <a href="https://michaelpanzer.github.io/portfolio" class="link"
-          >MP</a
-        >
+        <a href="https://michaelpanzer.github.io/portfolio" class="link">MP</a>
       </h3>
 
       <nav class="nav center">
@@ -94,7 +130,7 @@
               viewBox="0 0 24 24" 
               fill="currentColor"
             >
-                <path d="m0 19 6-3.5L0 12ZM6 0 0 3.5l6 3.5v7l6-3.5V3.5Z" transform="translate(6 5)"/>
+              <path d="m0 19 6-3.5L0 12ZM6 0 0 3.5l6 3.5v7l6-3.5V3.5Z" transform="translate(6 5)"/>
             </svg>       
           </a>
         </div>
@@ -105,96 +141,66 @@
         <h2 class="section__title">Projects</h2>
 
         <div class="projects__grid">
-          <!-- Project 1 as Clickable Button -->
+          <!-- Vehicle Dynamics Project -->
           <a 
-            href="project1.html" 
+            href="vehicle_dynamics.html" 
             class="project project-link"
-            target="_blank"
-            aria-label="View full details of Project 1"
+            aria-label="View Vehicle Dynamics project details"
           >
             <div class="project__content">
-              <h3>Project 1</h3>
+              <h3>Vehicle Dynamics</h3>
               <p class="project__description">
-                Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-                sapiente debitis labore sed ipsam Mollitia repellat illum quod
-                unde beatae Quis
+                Analysis and simulation of vehicle dynamics including suspension systems, handling characteristics, and performance optimization.
               </p>
               <ul class="project__stack">
-                <li class="project__stack-item">SASS</li>
-                <li class="project__stack-item">TypeScript</li>
-                <li class="project__stack-item">React</li>
+                <li class="project__stack-item">MATLAB</li>
+                <li class="project__stack-item">SolidWorks</li>
+                <li class="project__stack-item">Simulation</li>
               </ul>
-
               <div class="project__cta">
                 <span class="btn btn--outline">View Full Project →</span>
               </div>
             </div>
           </a>
 
-          <!-- Project 2 as Clickable Button -->
+          <!-- Mechanical Design Project -->
           <a 
-            href="project2.html" 
+            href="mechanical_design.html" 
             class="project project-link"
-            target="_blank"
-            aria-label="View full details of Project 2"
+            aria-label="View Mechanical Design project details"
           >
             <div class="project__content">
-              <h3>Project 2</h3>
+              <h3>Mechanical Design</h3>
               <p class="project__description">
-                Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-                sapiente debitis labore sed ipsam Mollitia repellat illum quod
-                unde beatae Quis
+                CAD modeling and prototyping of mechanical systems with focus on manufacturability and structural integrity.
               </p>
               <ul class="project__stack">
-                <li class="project__stack-item">SASS</li>
-                <li class="project__stack-item">TypeScript</li>
-                <li class="project__stack-item">React</li>
+                <li class="project__stack-item">SolidWorks</li>
+                <li class="project__stack-item">Fusion 360</li>
+                <li class="project__stack-item">3D Printing</li>
               </ul>
-              <div class="project__icons">
-                <span class="project__icon">
-                  <i aria-hidden="true" class="fab fa-github"></i>
-                  <span class="sr-only">GitHub Repository</span>
-                </span>
-                <span class="project__icon">
-                  <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-                  <span class="sr-only">Live Preview</span>
-                </span>
-              </div>
               <div class="project__cta">
                 <span class="btn btn--outline">View Full Project →</span>
               </div>
             </div>
           </a>
 
-          <!-- Project 3 as Clickable Button -->
+          <!-- Python Automation Project -->
           <a 
-            href="project3.html" 
+            href="python_automation.html" 
             class="project project-link"
-            target="_blank"
-            aria-label="View full details of Project 3"
+            aria-label="View Python Automation project details"
           >
             <div class="project__content">
-              <h3>Project 3</h3>
+              <h3>Python Automation</h3>
               <p class="project__description">
-                Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-                sapiente debitis labore sed ipsam Mollitia repellat illum quod
-                unde beatae Quis
+                Development of Python scripts for automating engineering calculations, data analysis, and simulation tasks.
               </p>
               <ul class="project__stack">
-                <li class="project__stack-item">SASS</li>
-                <li class="project__stack-item">TypeScript</li>
-                <li class="project__stack-item">React</li>
+                <li class="project__stack-item">Python</li>
+                <li class="project__stack-item">NumPy</li>
+                <li class="project__stack-item">Pandas</li>
               </ul>
-              <div class="project__icons">
-                <span class="project__icon">
-                  <i aria-hidden="true" class="fab fa-github"></i>
-                  <span class="sr-only">GitHub Repository</span>
-                </span>
-                <span class="project__icon">
-                  <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-                  <span class="sr-only">Live Preview</span>
-                </span>
-              </div>
               <div class="project__cta">
                 <span class="btn btn--outline">View Full Project →</span>
               </div>
@@ -208,9 +214,13 @@
         <h2 class="section__title">Skills</h2>
         <ul class="skills__list">
           <li class="skills__list-item btn btn--plain">Solidworks</li>
-          <li class="skills__list-item btn btn--plain">Fusion</li>
+          <li class="skills__list-item btn btn--plain">Fusion 360</li>
           <li class="skills__list-item btn btn--plain">OnShape</li>
           <li class="skills__list-item btn btn--plain">Python</li>
+          <li class="skills__list-item btn btn--plain">MATLAB</li>
+          <li class="skills__list-item btn btn--plain">3D Printing</li>
+          <li class="skills__list-item btn btn--plain">CAD/CAM</li>
+          <li class="skills__list-item btn btn--plain">FEA Analysis</li>
         </ul>
       </section>
 
@@ -241,81 +251,5 @@
     </div>
 
     <script src="./script.js"></script>
-    
-    <style>
-      /* Additional styles for clickable projects */
-      .project-link {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        border: 2px solid transparent;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        background: var(--clr-bg);
-        height: 100%;
-      }
-      
-      .project-link:hover {
-        transform: translateY(-5px);
-        border-color: var(--clr-primary);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      
-      .project-link:focus {
-        outline: 2px solid var(--clr-primary);
-        outline-offset: 2px;
-      }
-      
-      .project__content {
-        padding: 1.5rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .project__icons {
-        margin-top: auto;
-        padding-top: 1rem;
-        display: flex;
-        gap: 1rem;
-      }
-      
-      .project__icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        background: var(--clr-bg-alt);
-        border-radius: 50%;
-        color: var(--clr-fg);
-      }
-      
-      .project__cta {
-        margin-top: 1rem;
-        text-align: center;
-      }
-      
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-      
-      /* Ensure original project styles are maintained */
-      .project {
-        position: relative;
-        background: var(--clr-bg-alt);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-    </style>
   </body>
 </html>
