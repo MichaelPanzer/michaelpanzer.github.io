@@ -136,13 +136,14 @@ button {
 
 .link--icon {
   color: var(--clr-fg);
+  fill: var(--clr-fg);
   display: flex;
   align-items: center;
   justify-content: center;
   align-items: center;
-  width: 1.6em;
-  height: 1.6em;
-  font-size: 200%;
+  width: 1.3em;
+  height: 1.3em;
+  font-size: 3.0em;
 }
 
 .btn {
