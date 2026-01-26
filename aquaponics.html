@@ -59,37 +59,35 @@
       <div class="about center">
         <h1><span class="section__title">Aquaponics</span></h1>
 
-        <h3 class="section__title" id="Intro">  Intro</h3>
-        <img src="assets/aquaponics.jpg" class="section__image">
-        <p class="section__body">
-          The goal of this project was to create a system which allowed me to grow fresh vegetables in my small apartment. 
-          Aquaponics uses a symbiotic loop where fish and plants grow together: fish provide natural fertilizer for the plants, and the plants, in turn, filter and clean the water for the fish. 
-          This closed-loop ecosystem is not only highly efficient and space-saving, but it also uses about 90% less water than traditional soil gardening. 
-          To optimize this miniature ecosystem, I automated its core functions using an Arduino Uno which manages scheduled LED grow lighting and pump timing to ensure consistent plant growth and tank health. 
-          The result is a harmonious blend of biology and technology—a compact, self-regulating garden that delivers fresh produce right from my living space.        </p>
-        </p>
-        
-        <h3 class="section__title" id="Frame">  Frame</h3>
-        <img src="assets/grow_bed.bmp" class="section__image">
-        <p class="section__body">
-          The system's structural frame, custom-built from repurposed aluminum extrusion, provides a rigid yet modular foundation for the fish tank, grow beds, lighting, and control electronics.
-          For the grow bed, I designed a two-part model in FreeCAD, which I then 3D-printed, assembled with marine epoxy, and finished with a silicone sealant to ensure it was completely watertight.
-        </p>
+    <h3 class="section__title" id="Intro">Intro</h3> <img src="assets/aquaponics.jpg" class="section__image"> <p class="section__body"> 
+      The goal of this project was to create a system which allowed me to grow fresh vegetables in my small apartment. 
+      I selected an aquaponics design, which creates a symbiotic loop where the fish provide natural fertilizer for the plants, and the plants, in turn, filter and clean the water for the fish. 
+      This closed-loop ecosystem is not only highly space-efficient, but it also incredibly healthy for the fish and the plants. 
+      To optimize this miniature ecosystem, I automated its core functions using an Arduino Uno to manage scheduled LED grow lighting and pump timing, ensuring consistent plant growth and tank health. 
+      The result is a blend of biology and technology—a compact, self-regulating garden that produces fresh vegetables right in my living space. 
+    </p>
 
-        <h3 class="section__title" id="Electronics">  Electronics</h3>
-        <img src="assets/aquaponics_circuit.jpg" class="section__image">
-        <p class="section__body">
-          The entire system is controlled with an Arduino Uno and a custom circuit built on a prototyping shield. 
-          The Arduino manages the timing of the water pump and grow lights using a DS3231 RTC module and powers Bridgelux LED light strips via constant-current buck converters. 
-          A low-cost USB aquarium pump is actuated using a MOSFET and set on a timer to fill and drain the grow bed.
-        </p>
+    <h3 class="section__title" id="Frame">Frame</h3>
+    <img src="assets/grow_bed.bmp" class="section__image">
+    <p class="section__body">
+      I constructed the frame from repurposed aluminum extrusion to create a rigid yet modular foundation for the fish tank, grow beds, lighting, and control electronics.
+      For the grow bed, I designed a two-part model in FreeCAD, which I then 3D-printed, assembled with marine epoxy, and finished with a silicone sealant to ensure it was completely watertight.
+    </p>
 
-        <h3 class="section__title" id="Future Plans">  Future Plans</h3>
-        <p class="section__body">
-          The current prototype has been working reliably for nearly a year, successfully providing me with fresh vegetables, however I plan several upgrades to improve its performance and maintainability. 
-          Converting to an ESP32 microcontroller with WiFi capability, would eliminate the need for a separate RTC module and enable remote configuration and monitoring. 
-          Additionally, moving from the breadboard shield to a custom PCB with integrated LED drivers would reduce points of failure and significantly clean up the wiring.
-        </p>
+    <h3 class="section__title" id="Electronics">Electronics</h3>
+    <img src="assets/aquaponics_circuit.jpg" class="section__image">
+    <p class="section__body">
+      I controlled the entire system with an Arduino Uno and a custom circuit I built on a prototyping shield.
+      The Arduino managed the timing of the water pump and grow lights using a DS3231 RTC module, and powered Bridgelux LED light strips via constant-current buck converters.
+      I actuated a low-cost USB aquarium pump using a MOSFET, setting it on a timer to fill and drain the grow bed.
+    </p>
+
+    <h3 class="section__title" id="Future Plans">Future Plans</h3>
+    <p class="section__body">
+      The current prototype has been working reliably for nearly a year, successfully providing me with fresh vegetables. However, I plan several upgrades to improve its performance and maintainability.
+      Converting to an ESP32 microcontroller with WiFi capability would eliminate the need for a separate RTC module and enable remote configuration and monitoring.
+      Additionally, moving from the breadboard shield to a custom PCB with integrated LED drivers would reduce points of failure and significantly clean up the wiring.
+    </p>
 
 
     </main>
