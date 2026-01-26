@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa62c117c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Michael Panzer</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  </head>
+  <body class="light" id="top">
+    <header class="header center">
+      <h3>
+        <a href="index.html" class="link">MP</a>
+      </h3>
+
+      <nav class="nav center">
+        <ul class="nav__list center">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Intro">Intro</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Wheels">Wheels</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Electronics">Suspension</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Future Plans">Egg Basket</a>
+          </li>
+        </ul>
+
+        <button type="button" aria-label="toggle theme" class="btn btn--icon">
+          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+        </button>
+
+        <button
+          type="button"
+          aria-label="toggle navigation"
+          class="btn btn--icon nav__hamburger"
+        >
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Title -->
+      <div class="about center">
+        <h1><span class="section__title">Stair Climbing Robot</span></h1>
+
+        <h3 class="section__title" id="Intro">Intro</h3>
+          <img src="assets/stair_climber.png" class="section__image">
+          <p class="section__body">
+            For my sophomore design class, I worked with a small team to compete in a class-wide competition. 
+            Our goal was to design and build a robot capable of climbing a set of stairs, retrieving an egg, and returning it safely to the start.
+            As the lead for the robot's mechanical design, I managed the CAD, manufactured prototypes, and integrated the components.
+          </p>
+
+        <h3 class="section__title" id="Wheels">Wheels</h3>
+        <img src="assets/stair_climber.png" class="section__image">
+        <p class="section__body">
+          Our tri-spoke wheel design proved exceptionally effective at climbing the stairs. 
+          However, the long spokes were susceptible to bending loads if the robot tipped over.
+          To ensure robustness, I designed the wheels as a sandwich composite with birch plywood skins and a PETG core.
+          We tested the bending strength of several core infill densities and adhesives, finding that a 15% infill core bonded with cyanoacrylate created the strongest construction.
+          I also used topology optimization in Fusion 360 to reduce unnecessary mass from the plywood skins.
+        </p>
+
+        <h3 class="section__title" id="Suspension">Suspension</h3>
+        <img src="assets/aquaponics_circuit.jpg" class="section__image">
+        <p class="section__body">
+          To complement the robust wheels, I implemented a suspension system to absorb major impacts.
+          I sourced the springs from old motorcycle clutch springs from my Kawasaki Z125, calculating that two per side provided the optimal spring rate.
+          For simplicity, I used a swing-axle design with 608 bearings as pivots, and I integrated the motor housing as a structural component.
+        </p>
+
+        <h3 class="section__title" id="Egg Basket">Egg Basket</h3>
+        <p class="section__body">
+          While our wheels excelled at stair climbing, they offered poor maneuverability on flat ground. Consequently, the egg retrieval assembly needed to pick up the egg reliably from a large area.
+          The concept I chose was inspired by a big-box store ball pit, using an array of elastic bands stretched over a large basket to pick up and retain the egg.
+        </p>
+
+    </main>
+
+    <footer class="footer">
+      <a> Copyright © 2026 Michael Panzer - </a>
+      <a
+        href="https://github.com/rjshkhr/cleanfolio-minimal"
+        class="link footer__link"
+      >
+        Template By Raj Shekhar
+      </a>
+    </footer>
+
+    <div class="scroll-container">
+      <div class="scroll-top">
+        <a aria-label="Scroll up" href="#top">
+          <i aria-hidden="true" class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
