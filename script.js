@@ -33,6 +33,7 @@ btnTheme.addEventListener('click', toggleTheme)
 
 // Listen for theme changes in the OS/browser
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  /*
   // Only auto-switch if user hasn't manually set a preference
   if (!localStorage.getItem('theme')) {
     if (event.matches) {
@@ -47,10 +48,34 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
       }
     }
   }
+  */
+
+  if (event.matches) {
+      // Switch to dark mode
+      if (!document.body.classList.contains('dark')) {
+        toggleTheme();
+      }
+    } else {
+      // Switch to light mode
+      if (document.body.classList.contains('dark')) {
+        toggleTheme();
+      }
+    }
 });
 
 // On page load
 document.addEventListener('DOMContentLoaded', function() {
+  // Use system preference
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (!document.body.classList.contains('dark')) {
+      toggleTheme();
+    }
+  } else if((window.matchMedia('(prefers-color-scheme: light)').matches)) {
+    if (!document.body.classList.contains('light')) {
+      toggleTheme();
+    }  
+  }
+  /*
   const savedTheme = localStorage.getItem('theme');
   
   if (savedTheme) {
@@ -65,12 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleTheme();
       }
     }
+      
+
   }
+  */
   
   // Add click event to theme toggle button
-  document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+  //document.getElementById('btn-theme').addEventListener('click', toggleTheme);
 });
 
+/*
 const displayList = () => {
 	const navUl = document.querySelector('.nav__list')
 
@@ -84,9 +113,10 @@ const displayList = () => {
 		navUl.classList.remove('display-nav-list')
 	}
 }
+*/
 
-btnHamburger.addEventListener('click', displayList)
-
+//btnHamburger.addEventListener('click', displayList)
+/*
 const scrollUp = () => {
 	const btnScrollTop = document.querySelector('.scroll-top')
 
@@ -101,3 +131,4 @@ const scrollUp = () => {
 }
 
 document.addEventListener('scroll', scrollUp)
+*/
