@@ -249,7 +249,7 @@ main {
   margin-top: 1.2em;
   margin-bottom: 0.8em;
   scroll-margin-top: 13vh;
-
+  color: var(--clr-primary);
 }
 
 .section__body {
