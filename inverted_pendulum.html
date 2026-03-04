@@ -65,50 +65,45 @@
         <h3 class="section__title" id="Intro">  Intro</h3>
         <img src="assets/pend_swing_up.gif" class="section__image"> <p class="section__body"> 
         <p class="section__body">
-          The goal of this project was to create a balancing inverted pendulum on a cart. 
-          This is a classic problem in control theory ...
-          This project consisted of two parts, the first was a model written in Python to simulate the inverted pendulum.
-          The second was a hardware implementation of the inverted pendulum. 
+           For this project, I set out to build a cart that could balance an inverted pendulum, a classic problem in control theory. 
+           The project consisted of two parts: first, I used Python to model the dynamics of the system, second, I built a hardware implementation to test the control system under real conditions.
         </p>
 
         <h3 class="section__title" id="Dynamic Modeling">Dynamic Modeling</h3> 
         <img src="assets/pend_model.png" class="section__image"> <p class="section__body"> 
-          A state space model of the inverted pendulum was formulated with lagrangian mechanics and the controllable input of the system was the acceleration of the cart. 
-          The control scheme had two distinct modes depending on the angle of the pendulum. 
-          When close to the upright position, balancing mode used a Linear Quadratic Regulator to balance the pendulum at specific cart positions. 
-          Otherwise, swing up mode accelerated the cart side to side in order to increase the energy of the pendulum until the total energy was greater than the potential energy of an upright pendulum.
-      
+          I formulated a state-space model of the inverted pendulum using Lagrangian mechanics, with cart acceleration as the controllable input. 
+          The control scheme had two distinct modes depending on the pendulum's angle. 
+          When close to the upright position, balancing mode used a Linear Quadratic Regulator (LQR) to balance the pendulum at specific cart positions. 
+          Otherwise, swing-up mode accelerated the cart side-to-side to increase the pendulum's energy until it exceeded the potential energy of the upright position.
         </p>
 
         <h3 class="section__title" id="Hardware">Hardware Implementation</h3>
         <img src="assets/pend_hardware.jpg" class="section__image">
         <p class="section__body">
-          The hardware was made to test the control theory under real conditions. 
-          Most of the design choices were made to reduce cost and reuse components from previous projects. 
-          The cart motion assembly was designed in FreeCad and used a combination of laser cut sheet metal from SendCutSend and 3D printed parts. 
-          The cart rode along a 600 mm length 0f 2040 v-slot extrusion and was impelled with a NEMA 17 stepper motor. 
-          The motor was driven with a TMC2209 driver, the pendulum position was measured with a AS5600 magnetic encoder, and the entire system was controlled with an Arduino UNO. 
+          I built the hardware to test the control theory under real conditions, with the objective to keep the cost low and reuse components from previous projects. 
+          I designed the cart motion assembly in FreeCAD, combining laser-cut sheet metal from SendCutSend with 3D-printed parts. 
+          The cart rode along a 600 mm length of 2040 v-slot extrusion and was driven by a NEMA 17 stepper motor. 
+          I drove the motor with a TMC2209 driver, measured pendulum angle with an AS5600 magnetic encoder, and controlled the entire system with an Arduino UNO. controlled with an Arduino UNO. 
         </p>
 
         <h3 class="section__title" id="Troubleshooting">Troubleshooting</h3>
         <p class="section__body">
-          Once the hardware was made it took about a week to iron out the problems and get the full control scheme working. 
-          A large source of issues was the magnetic encoder.
-          The AS5600 communicates via I2C which is not robust over long distances. 
-          The original component layout had the long communication wires going right by the motor, leading to erroneous readings. 
-          To fix this the Arduino was moved between the motor and drag chain so the wires for the motor and encoder were routed away from each other. 
-          Additionally, the AS5600 has a resolution of just 14 bits leading to imprecise pendulum measurements and oscillations in the pendulum. 
-          Another source of issues was the motor. 
-          The stepper motor was chosen because it was the most powerful one I had in hand, but a more powerful stepper or full feedback servo motor would be more suitable. 
-          To avoid skipping steps I had to implement limits on the maximum speed and acceleration of the stepper which limited how aggressive the control could be. 
+          Once the hardware was built, it took about a week to iron out the problems and get the full control scheme working. 
+          The magnetic encoder proved to be a major source of issues. 
+          The AS5600 communicates via I2C, which is not robust over long distances; my original layout had the long communication wires running right by the motor, leading to erroneous readings. 
+          To fix this, I relocated the Arduino between the motor and drag chain so the motor and encoder wires were routed away from each other.
+          Additionally, the AS5600's 14-bit resolution provided imprecise measurements, causing oscillations in the pendulum. 
+          The motor was another source of issues. 
+          I initially chose the stepper motor because it was the most powerful one I had on hand, but to avoid skipping steps I had to implement careful limits on its maximum speed and acceleration, which constrained how aggressively the control could respond.
         </p>
 
         <h3 class="section__title" id="Future Improvements">Future Improvements</h3>
         <p class="section__body">
-          As it currently stands the pendulum is able to swing up without crashing with ~50% success. 
-          The most common time it crashes is in the transition between swing up and balance modes; this could be improved with better tuning of the LQR or a less aggressive swing up controller. 
-          Additionally, hardware upgrades such as a higher resolution encoder or a high-torque brushless servo motor would allow for more precise pendulum control. 
-          With better hardware, a major improvement could be made by implementing a model predictive control scheme to allow for a single non-linear controller with constraints for all phases of pendulum movement. 
+          Now that I have the hardware working, I am looking to make it more robust and experiment with new control methods. 
+          Currently, the pendulum can swing up without crashing about 50% of the time. 
+          It most often fails during the transition between swing-up and balance modes; this could be improved with better LQR tuning or a less aggressive swing-up controller. 
+          Hardware upgrades such as a higher-resolution encoder or a high-torque brushless servo motor would allow for more precise control. 
+          Additionally, with a faster microcontroller, I could implement model predictive control, enabling efficient control with constraints on cart movement and input intensity.
         </p>
         
 
