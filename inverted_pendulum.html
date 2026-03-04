@@ -30,10 +30,10 @@
             <a class="link link--nav" href="#Intro">Intro</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="#Dynamic Models">Dynamic Model</a>
+            <a class="link link--nav" href="#Dynamic Model">Dynamic Model</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="#Hardware">Hardware Implementation</a>
+            <a class="link link--nav" href="#Hardware">Hardware</a>
           </li>
           <li class="nav__list-item">
             <a class="link link--nav" href="#Hardware">Troubleshooting</a>
@@ -69,7 +69,7 @@
            The project consisted of two parts: first, I used Python to model the dynamics of the system, second, I built a hardware implementation to test the control system under real conditions.
         </p>
 
-        <h3 class="section__title" id="Dynamic Modeling">Dynamic Modeling</h3> 
+        <h3 class="section__title" id="Dynamic Model">Dynamic Model</h3> 
         <img src="assets/pend_model.png" class="section__image"> <p class="section__body"> 
           I formulated a state-space model of the inverted pendulum using Lagrangian mechanics, with cart acceleration as the controllable input. 
           The control scheme had two distinct modes depending on the pendulum's angle. 
@@ -77,7 +77,7 @@
           Otherwise, swing-up mode accelerated the cart side-to-side to increase the pendulum's energy until it exceeded the potential energy of the upright position.
         </p>
 
-        <h3 class="section__title" id="Hardware">Hardware Implementation</h3>
+        <h3 class="section__title" id="Hardware">Hardware</h3>
         <img src="assets/pend_hardware.jpg" class="section__image">
         <p class="section__body">
           I built the hardware to test the control theory under real conditions, with the objective to keep the cost low and reuse components from previous projects. 
