@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa62c117c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Michael Panzer</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  </head>
+  <body class="light" id="top">
+    <header class="header center">
+      <h3>
+        <a href="index.html" class="link">MP</a>
+      </h3>
+
+      <nav class="nav center">
+        <ul class="nav__list center">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Intro">Intro</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Dynamic Models">Dynamic Model</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Hardware">Hardware Implementation</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Hardware">Troubleshooting</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Future Improvements">Future Improvements</a>
+          </li>
+        </ul>
+
+        <button type="button" aria-label="toggle theme" class="btn btn--icon">
+          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+        </button>
+
+        <button
+          type="button"
+          aria-label="toggle navigation"
+          class="btn btn--icon nav__hamburger"
+        >
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Title -->
+      <div class="about center">
+        <h1><span class="section__title">Inverted Pendulum</span></h1>
+
+        <h3 class="section__title" id="Intro">  Intro</h3>
+        <img src="assets/pend_swing_up.gif" class="section__image"> <p class="section__body"> 
+        <p class="section__body">
+          The goal of this project was to create a balancing inverted pendulum on a cart. 
+          This is a classic problem in control theory ...
+          This project consisted of two parts, the first was a model written in Python to simulate the inverted pendulum.
+          The second was a hardware implementation of the inverted pendulum. 
+        </p>
+
+        <h3 class="section__title" id="Dynamic Modeling">Dynamic Modeling</h3> 
+        <img src="assets/pend_model.png" class="section__image"> <p class="section__body"> 
+          A state space model of the inverted pendulum was formulated with lagrangian mechanics and the controllable input of the system was the acceleration of the cart. 
+          The control scheme had two distinct modes depending on the angle of the pendulum. 
+          When close to the upright position, balancing mode used a Linear Quadratic Regulator to balance the pendulum at specific cart positions. 
+          Otherwise, swing up mode accelerated the cart side to side in order to increase the energy of the pendulum until the total energy was greater than the potential energy of an upright pendulum.
+      
+        </p>
+
+        <h3 class="section__title" id="Hardware">Hardware Implementation</h3>
+        <img src="assets/pend_hardware.jpg" class="section__image">
+        <p class="section__body">
+          The hardware was made to test the control theory under real conditions. 
+          Most of the design choices were made to reduce cost and reuse components from previous projects. 
+          The cart motion assembly was designed in FreeCad and used a combination of laser cut sheet metal from SendCutSend and 3D printed parts. 
+          The cart rode along a 600 mm length 0f 2040 v-slot extrusion and was impelled with a NEMA 17 stepper motor. 
+          The motor was driven with a TMC2209 driver, the pendulum position was measured with a AS5600 magnetic encoder, and the entire system was controlled with an Arduino UNO. 
+        </p>
+
+        <h3 class="section__title" id="Troubleshooting">Troubleshooting</h3>
+        <p class="section__body">
+          Once the hardware was made it took about a week to iron out the problems and get the full control scheme working. 
+          A large source of issues was the magnetic encoder.
+          The AS5600 communicates via I2C which is not robust over long distances. 
+          The original component layout had the long communication wires going right by the motor, leading to erroneous readings. 
+          To fix this the Arduino was moved between the motor and drag chain so the wires for the motor and encoder were routed away from each other. 
+          Additionally, the AS5600 has a resolution of just 14 bits leading to imprecise pendulum measurements and oscillations in the pendulum. 
+          Another source of issues was the motor. 
+          The stepper motor was chosen because it was the most powerful one I had in hand, but a more powerful stepper or full feedback servo motor would be more suitable. 
+          To avoid skipping steps I had to implement limits on the maximum speed and acceleration of the stepper which limited how aggressive the control could be. 
+        </p>
+
+        <h3 class="section__title" id="Future Improvements">Future Improvements</h3>
+        <p class="section__body">
+          As it currently stands the pendulum is able to swing up without crashing with ~50% success. 
+          The most common time it crashes is in the transition between swing up and balance modes; this could be improved with better tuning of the LQR or a less aggressive swing up controller. 
+          Additionally, hardware upgrades such as a higher resolution encoder or a high-torque brushless servo motor would allow for more precise pendulum control. 
+          With better hardware, a major improvement could be made by implementing a model predictive control scheme to allow for a single non-linear controller with constraints for all phases of pendulum movement. 
+        </p>
+        
+
+    </main>
+
+    <footer class="footer">
+      <a> Copyright © 2026 Michael Panzer - </a>
+      <a
+        href="https://github.com/rjshkhr/cleanfolio-minimal"
+        class="link footer__link"
+      >
+        Template By Raj Shekhar
+      </a>
+    </footer>
+
+    <div class="scroll-container">
+      <div class="scroll-top">
+        <a aria-label="Scroll up" href="#top">
+          <i aria-hidden="true" class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
