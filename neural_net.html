@@ -59,6 +59,7 @@
         <h1><span class="section__title">Neural Network</span></h1>
         
         <h3 class="section__title" id="Intro"> Intro</h3>
+        <img src="assets/mnist_5.png" class="section__image"> 
         <p class="section__body">
           The goal of this project was to create a neural network trained to recognize handwritten characters from the MNIST dataset. 
           By building the network from the ground up, I aimed to gain a fundamental understanding of backpropagation, gradient descent, and the matrix operations that drive modern machine learning.
@@ -67,25 +68,28 @@
         <h3 class="section__title" id="Architecture">Architecture</h3> 
         <img src="assets/neural_net_diagram.png" class="section__image"> 
         <p class="section__body"> 
-          The network operates through layers of nodes connected by synapses, each defined by a weight and bias parameter. 
-          I implemented a Multi-Layer Perceptron (MLP) where the activations are calculated via matrix multiplication of the weights and the previous layer's output. 
-          To train the model, I used a mean squared error cost function and implemented backpropagation to calculate the partial derivatives of the cost function with respect to every weight and bias in the system.
+          The network operates through layers of nodes interconnected by synapses, each defined by learnable weight and bias parameters. 
+          I developed a Multi-Layer Perceptron from scratch, where the activations for each layer are derived from the preceding layer's output through a tunable linear transformation and a fixed non-linear activation function.
+        </p>
+        <p class="section__body"> 
+          To train the model, I implemented a mean squared error cost function and utilized backpropagation to calculate the gradient of the cost with respect to every weight and bias in the system. 
+          I then optimized these parameters using a custom multithreaded batch gradient descent algorithm; allowing for efficient distribution of the computational load during the training process.
         </p>
 
         <h3 class="section__title" id="Activation Functions">Activation Functions</h3> 
         <img src="assets/activation_funcs.png" class="section__image"> 
         <p class="section__body"> 
           Choosing the right non-linearity was key to performance. 
-          I initially used a sigmoid activation function, but found that it suffered from the vanishing gradient problem, slowing down the early stages of training. 
-          After switching to a Rectified Linear Unit (ReLU) for the hidden layers and Softmax for the output layer, the network converged significantly faster and achieved a higher peak accuracy.
+          I initially used a sigmoid activation function, but found that it was slow to compute and suffered from the vanishing gradient problem, slowing down the early stages of training. 
+          After switching to a Rectified Linear Unit (ReLU) for the hidden layers, the network converged significantly faster and achieved a higher peak accuracy.
         </p>
 
         <h3 class="section__title" id="Results">Results</h3> 
-        <img src="assets/results_graph.png" class="section__image"> 
+        <img src="assets/neural_net_conv.png" class="section__image"> 
         <p class="section__body"> 
-          The final neural network was able to recognize handwritten digits with ~93% accuracy on the test set. 
-          Through hyperparameter tuning—specifically adjusting the learning rate and batch size I was able to minimize overfitting. 
-          This project successfully demonstrated the efficacy of stochastic gradient descent in optimizing high-dimensional parameter spaces.
+          The final neural network achieved ~94% accuracy on the handwritten digit test set. 
+          By tuning hyperparameters like the learning rate and batch size, I successfully minimized overfitting and stabilized convergence. 
+          This project demonstrated the efficacy of neural networks and gradient descent in optimizing high-dimensional parameter spaces for complex pattern recognition.        </p>
         </p>
 
     </main>
