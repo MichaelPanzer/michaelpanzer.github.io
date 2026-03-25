@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Michael Panzer</title>
+    <title>Michael Panzer | Neural Network</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
   </head>
   <body class="light" id="top">
@@ -24,20 +24,19 @@
         <a href="index.html" class="link">MP</a>
       </h3>
 
-      <!--QUICK LINKS-->
       <nav class="nav center">
         <ul class="nav__list center">
           <li class="nav__list-item">
             <a class="link link--nav" href="#Intro">Intro</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="#Tire Modeling">Tire Modeling</a>
+            <a class="link link--nav" href="#Architecture">Architecture</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="#Cornering Model">Cornering Model</a>
+            <a class="link link--nav" href="#Activation Functions">Activation Functions</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="#Kinematics">Kinematics</a>
+            <a class="link link--nav" href="#Results">Results</a>
           </li>
         </ul>
 
@@ -56,35 +55,38 @@
     </header>
 
     <main>
-      <!-- Title -->
       <div class="about center">
         <h1><span class="section__title">Neural Network</span></h1>
         
-        <!-- Content -->
-        <h3 class="section__title" id="Intro">  Intro</h3>
+        <h3 class="section__title" id="Intro"> Intro</h3>
         <p class="section__body">
-          The goal of this project was to create a neural network trained to recognize hand written characters in the MNIST dataset.
+          The goal of this project was to create a neural network trained to recognize handwritten characters from the MNIST dataset. 
+          By building the network from the ground up, I aimed to gain a fundamental understanding of backpropagation, gradient descent, and the matrix operations that drive modern machine learning.
         </p>
 
         <h3 class="section__title" id="Architecture">Architecture</h3> 
-        <img src="assets/tire_comp.png" class="section__image"> <p class="section__body"> 
-          A neural network operates layers of nodes connected by neurons each with a weight and bias parameter. 
-          The activation of each layer of nodes is stored in an array and the 
+        <img src="assets/neural_net_diagram.png" class="section__image"> 
+        <p class="section__body"> 
+          The network operates through layers of nodes connected by synapses, each defined by a weight and bias parameter. 
+          I implemented a Multi-Layer Perceptron (MLP) where the activations are calculated via matrix multiplication of the weights and the previous layer's output. 
+          To train the model, I used a mean squared error cost function and implemented backpropagation to calculate the partial derivatives of the cost function with respect to every weight and bias in the system.
         </p>
 
         <h3 class="section__title" id="Activation Functions">Activation Functions</h3> 
-        <img src="assets/tire_comp.png" class="section__image"> <p class="section__body"> 
-          A neural network operates layers of nodes connected by neurons each with a weight and bias parameter. 
-          
+        <img src="assets/activation_funcs.png" class="section__image"> 
+        <p class="section__body"> 
+          Choosing the right non-linearity was key to performance. 
+          I initially used a sigmoid activation function, but found that it suffered from the vanishing gradient problem, slowing down the early stages of training. 
+          After switching to a Rectified Linear Unit (ReLU) for the hidden layers and Softmax for the output layer, the network converged significantly faster and achieved a higher peak accuracy.
         </p>
 
         <h3 class="section__title" id="Results">Results</h3> 
-        <img src="assets/tire_comp.png" class="section__image"> <p class="section__body"> 
-          A neural network operates layers of nodes connected by neurons each with a weight and bias parameter. 
-          
+        <img src="assets/results_graph.png" class="section__image"> 
+        <p class="section__body"> 
+          The final neural network was able to recognize handwritten digits with ~93% accuracy on the test set. 
+          Through hyperparameter tuning—specifically adjusting the learning rate and batch size I was able to minimize overfitting. 
+          This project successfully demonstrated the efficacy of stochastic gradient descent in optimizing high-dimensional parameter spaces.
         </p>
-
-
 
     </main>
 

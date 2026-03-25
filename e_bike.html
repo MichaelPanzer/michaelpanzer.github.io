@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa62c117c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Michael Panzer</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  </head>
+    <body class="light" id="top">
+    <header class="header center">
+      <h3>
+        <a href="index.html" class="link">MP</a>
+      </h3>
+
+      <nav class="nav center">
+        <ul class="nav__list center">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Intro">Intro</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Frame & Power">Frame & Power</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Wheel Fabrication">Wheel Fabrication</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Safety & Integration">Safety & Integration</a>
+          </li>
+        </ul>
+
+        <button type="button" aria-label="toggle theme" class="btn btn--icon">
+          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+        </button>
+
+        <button
+          type="button"
+          aria-label="toggle navigation"
+          class="btn btn--icon nav__hamburger"
+        >
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="about center">
+        <h1><span class="section__title">E-Bike Conversion</span></h1>
+
+        <h3 class="section__title" id="Intro"> Intro</h3>
+        <img src="assets/ebike_full_build.jpg" class="section__image">
+        <p class="section__body">
+          For this project, I converted a vintage 2nd-hand Trek 700 Multitrack into a high-utility electric commuter. 
+          The goal was to leverage the mechanical advantages of a classic steel frame while integrating a high-torque electric drivetrain. 
+          This project involved significant mechanical fabrication, electrical system design, and custom wheel-building to handle the increased loads of an electrified system.
+        </p>
+
+        <h3 class="section__title" id="Frame & Power">Frame & Power</h3> 
+        <p class="section__body"> 
+          The foundation of the build was a Trek 700 frame, chosen for its relaxed geometry and high-strength 4130 chromoly steel construction. 
+          As opposed to aluminium the 4130 will provide additional strength and fatigue resistance when subjected to the increased loads of the electric drivetrain. 
+          For propulsion, I selected a 1kW rear hub motor. This choice allowed for seamless integration into the existing frame without requiring complex mid-drive mounting brackets, maintaining the original chainline for the pedal-assist system.
+        </p>
+
+        <h3 class="section__title" id="Wheel Fabrication">Wheel Fabrication</h3>
+        <img src="assets/truing_stand_custom.jpg" class="section__image">
+        <p class="section__body">
+          Standard bicycle wheels are not designed for the 1kW torque spikes of a hub motor, so I laced both the front and rear wheels from scratch. 
+          Built from welded steel square tubing, the stand features adjustable forks to accommodate various hub widths and integrated mounts for dial indicators. 
+          This setup allowed me to measure and correct radial and lateral runout to within 0.1mm, ensuring a vibration-free ride at top speeds.
+        </p>
+
+        <h3 class="section__title" id="Integration">Safety & Integration</h3>
+        <p class="section__body">
+          Engineering the electrical system required a focus on thermal management and user safety. 
+          I opted for a 48V system provide a balance between high-efficiency power delivery and electrical safety. 
+          The energy storage system was custom-built using **LG HG2 18650 cells** (3000 mAh, 20A peak), configured in a **13s4p layout**. 
+          This architecture provides a total capacity of 12 Ah and a peak current capability of 80A, comfortably exceeding the requirements of the 1kW motor.
+        </p>
+        <p class="section__body">
+          The pack was spot-welded and housed in a standard Hailong enclosure for weather resistance and easy removal. 
+          To manage the mechanical stress of the motor's 1kW output, I installed dedicated torque arms on the rear dropouts. 
+        </p>
+        
+    </main>
+
+
+
+
+    <footer class="footer">
+      <a> Copyright © 2026 Michael Panzer - </a>
+      <a
+        href="https://github.com/rjshkhr/cleanfolio-minimal"
+        class="link footer__link"
+      >
+        Template By Raj Shekhar
+      </a>
+    </footer>
+
+    <div class="scroll-container">
+      <div class="scroll-top">
+        <a aria-label="Scroll up" href="#top">
+          <i aria-hidden="true" class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
