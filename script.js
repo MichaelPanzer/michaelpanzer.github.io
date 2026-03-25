@@ -1,28 +1,24 @@
 const body = document.body
-const btnTheme = document.querySelector('.fa-moon')
 
-const setTheme = isDark => {
+const setTheme = (isDark) => {
   body.classList.remove('dark', 'light')
-  btnTheme.classList.remove('fa-moon', 'fa-sun')
-
+  
   if (isDark) {
     body.classList.add('dark')
-    btnTheme.classList.add('fa-sun')
   } else {
     body.classList.add('light')
-    btnTheme.classList.add('fa-moon')
   }
 }
 
-// Apply theme on load
+// Apply theme based on system/OS preference
 const applySystemTheme = () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
   setTheme(prefersDark)
 }
 
-// Listen for OS/browser theme changes
+// Listen for OS theme changes while the user is on the site
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-mediaQuery.addEventListener('change', e => {
+mediaQuery.addEventListener('change', (e) => {
   setTheme(e.matches)
 })
 
