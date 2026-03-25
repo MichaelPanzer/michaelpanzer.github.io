@@ -62,11 +62,13 @@
         <h3 class="section__title" id="Intro">  Intro</h3>
         <p class="section__body">
           As the suspension lead for the 25-26 RWR FSAE team, I was in charge of developing tire and vehicle dynamics models to guide our design process. 
+          To ensure these models complimented our design process, I built a modular Python workflow using NumPy and SciPy designed for rapid iteration. 
+          By leveraging JAX for just-in-time (JIT) compilation and SymPy for symbolic derivation, I optimized the compute-heavy solvers to provide near-instant feedback. 
         </p>
 
         <h3 class="section__title" id="Tire Modeling">Tire Modeling</h3> 
         <img src="assets/tire_comp.png" class="section__image"> <p class="section__body"> 
-          To create the tire model, Kavan Weeks and I wrote Python code to pre-process raw TTC (Tire Test Consortium) data and fit it to the pure lateral MF6.1 (Magic Formula) tire model from Tire and Vehicle Dynamics by Pacejka. 
+          To create the tire model, Kavan Weeks and I wrote Python code to pre-process raw TTC (Tire Test Consortium) data and fit it to the pure lateral MF6.1 (Magic Formula) tire model from the book Tire and Vehicle Dynamics by H. Pacejka. 
           We used this model to evaluate available tire options by comparing the combined coefficient of friction for a pair of tires, one highly loaded and another lightly loaded, at the same slip angle. 
           Although initial results indicated that Tire A would offer the best performance, further analysis of the raw data revealed that Tire A was highly sensitive to temperature; the runs producing the highest grip had an average tread temperature approximately 5°C warmer than any other tire. 
           We ultimately selected Tire D due to its superior low-temperature performance, exceptional grip, and low mass. 
@@ -86,13 +88,13 @@
         <img src="assets/front_susp_geometry.png" class="section__image">
         <p class="section__body">
           After using the cornering model to set requirements, we needed tools to optimize the suspension to meet them.
-          To achieve this, I wrote a Python script to solve the front-view planar kinematics of the suspension including bump steer, camber gain, and RCM (roll center migration).
+          To achieve this, I wrote a Python script to solve and optimize the front-view planar kinematics of the suspension including bump steer, camber gain, and RCM (roll center migration).
           The code also computed bump steer by determining how much the tie-rod length must change to maintain zero steer angle throughout its travel; using a small-displacement analysis, it then approximated the resulting steer angle at the tire.
         </p>
         
         <img src="assets/front_susp_opt.png" class="section__image">
         <p class="section__body">
-          Our design process involved providing the optimization code with constraints: fixed pickup locations, along with boundaries for adjustable pickup locations.
+          Our design process involved providing the optimization code with constraints: fixed pickup locations, and boundaries for adjustable pickup locations.
           For the front suspension where we had two variables to optimize, we also assigned weights for bump steer and RCM in the cost function.
           The solver then automatically generated the optimum suspension geometry for our requirements and constraints.
         </p>

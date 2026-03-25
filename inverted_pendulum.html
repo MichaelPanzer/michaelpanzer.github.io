@@ -83,7 +83,7 @@
           I built the hardware to test the control theory under real conditions, with the objective to keep the cost low and reuse components from previous projects. 
           I designed the cart motion assembly in FreeCAD, combining laser-cut sheet metal from SendCutSend with 3D-printed parts. 
           The cart rode along a 600 mm length of 2040 v-slot extrusion and was driven by a NEMA 17 stepper motor. 
-          I drove the motor with a TMC2209 driver, measured pendulum angle with an AS5600 magnetic encoder, and controlled the entire system with an Arduino UNO. controlled with an Arduino UNO. 
+          I drove the motor with a TMC2209 driver, measured pendulum angle with an AS5600 magnetic encoder, and controlled the entire system with an Arduino UNO.
         </p>
 
         <h3 class="section__title" id="Troubleshooting">Troubleshooting</h3>
@@ -103,7 +103,7 @@
           Currently, the pendulum can swing up without crashing about 50% of the time. 
           It most often fails during the transition between swing-up and balance modes; this could be improved with better LQR tuning or a less aggressive swing-up controller. 
           Hardware upgrades such as a higher-resolution encoder or a high-torque brushless servo motor would allow for more precise control. 
-          Additionally, with a faster microcontroller, I could implement model predictive control, enabling efficient control with constraints on cart movement and input intensity.
+          Additionally, with a faster microcontroller, I could implement model predictive control, enabling efficient control with strict constraints on cart movement and input intensity.
         </p>
         
 
